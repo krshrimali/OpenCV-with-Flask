@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <titlE> THIS WORKS! </title>
+        <script language="Javascript">
+        function showFileName() {
+            document.getElementById('display').innerHTML = document.getElementById('file_').value;
+        }
+        </script>
+    </head>
+    <body>
+        <form method="POST">
+            <input type="file" name="pic" id="file_" accept="image/">
+            <input type="submit" name="submit" id="submit_" onclick="showFileName();">
+        </form>
+        <p><span id='display'></span></p>
+        <h1>Hi! This link has been opened: {{count_}} times.</h1>
+        {% if image is defined %}
+        <img src="/static/{{image}}">
+        <img src="/static/edge.jpg">
+        {% else %}
+        <p>No image entered</p>
+        {% endif %}
+        
+    </body>
+</html>
